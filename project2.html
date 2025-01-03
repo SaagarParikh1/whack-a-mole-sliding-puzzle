@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-Mole</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Whack-a-Mole</h1>
+        <p>Score: <span id="score">0</span></p>
+        <p>Time Left: <span id="time-left">30</span>s</p>
+        <a href="puzzle.html" class="button">Go to Sliding Puzzle game</a>
+    </header>
+    
+    <main>
+        <!-- The Popup Container -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h2>Welcome to the Game!</h2>
+      <p>There have been some moles that have been tearing up your yard. It is your job to stop this invasion. Are you ready?</p>
+      <button id="start-btn">Start Game</button>
+    </div>
+  </div>
+        <div id="game-grid">
+            <!-- 9 grid squares -->
+            <div class="grid-square"></div>
+            <div class="grid-square"></div>
+            <div class="grid-square"></div>
+            <div class="grid-square"></div>
+            <div class="grid-square"></div>
+            <div class="grid-square"></div>
+            <div class="grid-square"></div>
+            <div class="grid-square"></div>
+            <div class="grid-square"></div>
+        </div>
+        <div id="buttons">
+        <button id="pause-btn" disabled>⏸︎ Pause Game</button>
+        <button id="end-btn" disabled>⏹︎ End Game</button>
+
+        
+    </main>
+    <footer>
+        <p>Created by Saagar Parikh</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

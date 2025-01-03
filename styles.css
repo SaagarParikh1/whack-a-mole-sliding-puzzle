@@ -1,0 +1,209 @@
+/* General Styling */
+body {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  background: linear-gradient(to bottom, #76b852, #8DC26F); /* Grass gradient background */
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styling */
+header {
+  padding: 20px;
+  background: #3e5c3e; /* Earthy green color */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Game Grid Styling */
+#game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.grid-square {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 50% 50%, #241d07 50%, #030301 100%); /* Grass-like color */
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.7), inset 0 -5px 10px rgba(0, 0, 0, 0.5);
+  border: 2px solid #261f0d; /* Earthy border */
+}
+
+/* Mole Styling */
+.grid-square .mole {
+  width: 80px;
+  height: 80px;
+  background-image: url('https://cdn.creazilla.com/cliparts/59232/mole-in-hole-clipart-xl.png');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 110%; /* Start off-screen */
+  left: 10%;
+  transition: top 0.3s ease-in-out;
+  cursor: url('https://cdn.creazilla.com/cliparts/36980/hammer-tool-clipart-xl.png') 16 16, auto;
+}
+
+.grid-square .mole.active {
+  top: 10%;
+}
+
+.grid-square:hover {
+  background: radial-gradient(circle at 50% 50%, #454406 50%, #4b5320 100%); /* Hover effect for dirt/grass */
+}
+
+/* Popup Styling */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #fff;
+  color: #2c3e50;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+/* Start Button Styling */
+#start-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#start-btn:hover {
+  background-color: #388E3C;
+}
+#pause-btn {
+  background-color: #FF9800; /* Orange for Pause */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#pause-btn:hover {
+  background-color: #F57C00;
+}
+
+#end-btn {
+  background-color: #F44336; /* Red for End */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#end-btn:hover {
+  background-color: #D32F2F;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  #game-grid {
+      grid-template-columns: repeat(3, 80px);
+  }
+
+  .grid-square {
+      width: 80px;
+      height: 80px;
+  }
+
+  .grid-square .mole {
+      width: 60px;
+      height: 60px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #game-grid {
+      grid-template-columns: repeat(3, 60px);
+  }
+
+  .grid-square {
+      width: 60px;
+      height: 60px;
+  }
+
+  .grid-square .mole {
+      width: 50px;
+      height: 50px;
+  }
+
+  #start-btn {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+}
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green color */
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #388E3C; /* Darker green on hover */
+}
+
+/* Add a more dramatic animation for mole hit */
+.mole.hit {
+  animation: mole-hit-noticeable 0.5s ease-out forwards;
+}
+
+@keyframes mole-hit-noticeable {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.3);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
